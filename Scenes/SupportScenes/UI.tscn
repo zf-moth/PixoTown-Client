@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scenes/SupportScenes/Chat.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.815686, 0.992157, 0.843137 )
+corner_radius_top_right = 10
+
+[node name="Chat" type="Control"]
+visible = false
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -62.0
+margin_right = 341.0
+margin_bottom = 186.0
+rect_scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="PanelContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -246.0
+margin_right = 339.0
+margin_bottom = -6.10352e-05
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_right = 339.0
+margin_bottom = 246.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+margin_right = 339.0
+margin_bottom = 217.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 5
+custom_constants/margin_left = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer/MarginContainer"]
+margin_left = 5.0
+margin_right = 334.0
+margin_bottom = 217.0
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+scroll_following = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+margin_top = 221.0
+margin_right = 339.0
+margin_bottom = 245.0
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_right = 292.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+margin_left = 296.0
+margin_right = 339.0
+margin_bottom = 24.0
+text = "Send"
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]

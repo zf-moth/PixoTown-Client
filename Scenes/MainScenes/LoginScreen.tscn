@@ -1,0 +1,154 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/MainScenes/LoginScreen.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=2]
+
+[node name="LoginScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 960.0
+margin_bottom = 540.0
+rect_scale = Vector2( 0.25, 0.25 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="NinePatchRect" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -132.0
+margin_right = 128.0
+margin_bottom = 124.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginScreen" type="VBoxContainer" parent="NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -104.0
+margin_right = 75.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameTitle" type="Label" parent="NinePatchRect/LoginScreen"]
+margin_right = 168.0
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 2 )
+text = "Username:"
+
+[node name="Username" type="LineEdit" parent="NinePatchRect/LoginScreen"]
+margin_top = 30.0
+margin_right = 168.0
+margin_bottom = 66.0
+custom_fonts/font = ExtResource( 2 )
+
+[node name="PasswordTitle" type="Label" parent="NinePatchRect/LoginScreen"]
+margin_top = 70.0
+margin_right = 168.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 2 )
+text = "Password:"
+
+[node name="Password" type="LineEdit" parent="NinePatchRect/LoginScreen"]
+margin_top = 100.0
+margin_right = 168.0
+margin_bottom = 136.0
+custom_fonts/font = ExtResource( 2 )
+secret = true
+
+[node name="LoginButton" type="Button" parent="NinePatchRect/LoginScreen"]
+margin_top = 140.0
+margin_right = 168.0
+margin_bottom = 172.0
+custom_fonts/font = ExtResource( 2 )
+text = "Login"
+
+[node name="CreateAccountButton" type="Button" parent="NinePatchRect/LoginScreen"]
+margin_top = 176.0
+margin_right = 168.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 2 )
+text = "Create Account"
+
+[node name="RegisterScreen" type="VBoxContainer" parent="NinePatchRect"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -75.0
+margin_top = -104.0
+margin_right = 75.0
+margin_bottom = 104.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UsernameTitle" type="Label" parent="NinePatchRect/RegisterScreen"]
+margin_right = 150.0
+margin_bottom = 13.0
+custom_fonts/font = ExtResource( 2 )
+text = "Username:"
+
+[node name="Username" type="LineEdit" parent="NinePatchRect/RegisterScreen"]
+margin_top = 17.0
+margin_right = 150.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 2 )
+
+[node name="PasswordTitle" type="Label" parent="NinePatchRect/RegisterScreen"]
+margin_top = 44.0
+margin_right = 150.0
+margin_bottom = 57.0
+custom_fonts/font = ExtResource( 2 )
+text = "Password:"
+
+[node name="Password" type="LineEdit" parent="NinePatchRect/RegisterScreen"]
+margin_top = 61.0
+margin_right = 150.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 2 )
+secret = true
+
+[node name="RepeatPasswordTitle" type="Label" parent="NinePatchRect/RegisterScreen"]
+margin_top = 88.0
+margin_right = 150.0
+margin_bottom = 101.0
+custom_fonts/font = ExtResource( 2 )
+text = "Repeat Password:"
+
+[node name="RepeatPassword" type="LineEdit" parent="NinePatchRect/RegisterScreen"]
+margin_top = 105.0
+margin_right = 150.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 2 )
+secret = true
+
+[node name="Confirm" type="Button" parent="NinePatchRect/RegisterScreen"]
+margin_top = 132.0
+margin_right = 150.0
+margin_bottom = 151.0
+custom_fonts/font = ExtResource( 2 )
+text = "Confirm"
+
+[node name="BackToLogin" type="Button" parent="NinePatchRect/RegisterScreen"]
+margin_top = 155.0
+margin_right = 150.0
+margin_bottom = 174.0
+custom_fonts/font = ExtResource( 2 )
+text = "Back To Login"
+[connection signal="pressed" from="NinePatchRect/LoginScreen/LoginButton" to="." method="_on_LoginButton_pressed"]
+[connection signal="pressed" from="NinePatchRect/LoginScreen/CreateAccountButton" to="." method="_on_CreateAccountButton_pressed"]
+[connection signal="pressed" from="NinePatchRect/RegisterScreen/Confirm" to="." method="_on_Confirm_pressed"]
+[connection signal="pressed" from="NinePatchRect/RegisterScreen/BackToLogin" to="." method="_on_BackToLogin_pressed"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/m5x7.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/SupportScenes/ChatBubble.gd" type="Script" id=2]
+[ext_resource path="res://Player/chat_bubble_2.png" type="Texture" id=3]
+[ext_resource path="res://Player/chat_bubble_1.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 32, 15 )
+margin_left = 6.04007
+margin_right = 5.14049
+margin_top = 5.14049
+margin_bottom = 5.01198
+
+[sub_resource type="DynamicFont" id=2]
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[node name="ChatBubble" type="VBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -16.0
+margin_top = -58.0
+margin_right = 16.0
+margin_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 0
+custom_constants/separation = -1
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+auto_wrap_size = 145.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 32.0
+margin_bottom = 24.0
+grow_vertical = 0
+rect_min_size = Vector2( 20, 24 )
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="Label" type="Label" parent="PanelContainer"]
+margin_left = 6.04007
+margin_top = 5.14049
+margin_right = 26.8595
+margin_bottom = 18.1405
+grow_vertical = 0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 11.0
+margin_top = 23.0
+margin_right = 21.0
+margin_bottom = 28.0
+size_flags_horizontal = 4
+texture = ExtResource( 3 )
