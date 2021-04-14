@@ -11,7 +11,7 @@ var password
 var new_account
 
 	
-func _process(delta):
+func _process(_delta):
 	if get_custom_multiplayer() == null:
 		return
 	if not custom_multiplayer.has_network_peer():
