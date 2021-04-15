@@ -25,7 +25,7 @@ func _ready():
 	var UI_instance = uistart.instance()
 	playerUI.add_child(UI_instance)
 
-func _process(delta):
+func _physics_process(delta):	# use this in case you do physics
 	if in_chat == false:
 		input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
