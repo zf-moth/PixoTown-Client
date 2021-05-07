@@ -13,7 +13,7 @@ func _on_Button_pressed():
 		lineEdit.clear()
 		chatButton.release_focus()
 
-func _process(delta):
+func _process(_delta):
 	pass
 #	if lineEdit.has_focus():
 #		get_node("/root/SceneHandler/World/YSort/Player").in_chat = true
